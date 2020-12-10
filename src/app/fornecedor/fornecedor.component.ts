@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {Fornecedor} from './../model/fornecedor.model'
 
 @Component({
   selector: 'app-fornecedor',
@@ -7,6 +8,11 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./fornecedor.component.css']
 })
 export class FornecedorComponent implements OnInit {
+
+  fornecedor:Fornecedor = {nome:""};
+
+  error:boolean = false;
+  erroDesc:string = "";
 
   constructor(private route: ActivatedRoute) { 
     this.route.queryParams.subscribe(params => {
@@ -28,4 +34,14 @@ export class FornecedorComponent implements OnInit {
     });
   }
 
+  onSend(){
+    console.log(this.fornecedor);
+
+    if(!this.fornecedor.nome){
+      this.error =true;
+      this.erroDesc="Prencha o nome";
+    }else{
+      this.error =false;
+    }
+  }
 }

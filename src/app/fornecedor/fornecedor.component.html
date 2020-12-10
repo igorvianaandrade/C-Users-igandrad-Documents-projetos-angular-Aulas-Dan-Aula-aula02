@@ -1,1 +1,20 @@
-<p>fornecedor works!</p>
+<p>
+    <label for="nome">Nome:</label>
+    <input type="text" [(ngModel)]="fornecedor.nome" required>    
+</p>
+<p>
+    <label for="endereco">Endereço:</label>
+    <input type="text" [(ngModel)]="fornecedor.endereco" required>    
+</p>
+<p>
+    <label for="cnpj">CNPJ:</label>
+    <input type="text" [(ngModel)]="fornecedor.cnpj" required>    
+</p>
+
+<p>    
+    <input type="submit" value="Enviar" (click)="onSend()">
+</p>
+
+<p [hidden]="!error" style="color:rgb(204, 24, 24) !important">    
+    {{erroDesc}}
+</p>
