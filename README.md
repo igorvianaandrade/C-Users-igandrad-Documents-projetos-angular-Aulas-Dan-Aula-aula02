@@ -1,7 +1,7 @@
 Aula 03 - CAPANGULAR
 
 - @Input e @Output
-- Routes
+- Routes: https://angular.io/api/router/Route#description
 - Estruturas de repetição:
   1. for map (usa aerofunction) - Consegue varrer lista e alterar o valor
   2. forEach - apenas ler a lista.
